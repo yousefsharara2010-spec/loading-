@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading...</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --text-color: #f0f0f5;
+            --accent-blue: #4169e1; /* Royal Blue */
+            --card-bg: #141419;
+            --border-color: #262630;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header {
+            margin-top: 3rem;
+        }
+
+        .brand-logo {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--accent-blue);
+            text-transform: lowercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: #888899;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 320px;
+            margin: 2rem 0;
+        }
+
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn:hover, .nav-btn:active {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            font-size: 0.8rem;
+            color: #555566;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            padding: 2rem;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(65, 105, 225, 0.15);
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 1.5rem;
+            color: #888;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .modal-body {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .size-table th, .size-table td {
+            border: 1px solid var(--border-color);
+            padding: 0.6rem;
+            text-align: center;
+        }
+
+        .size-table th {
+            background: #1c1c24;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="brand-logo">loading...</h1>
+        <p class="tagline">streetwear collection</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn" onclick="openModal('shopModal')">Shop</button>
+        <button class="nav-btn" onclick="openModal('aboutModal')">About</button>
+        <button class="nav-btn" onclick="openModal('sizeModal')">Size Chart</button>
+        <button class="nav-btn" onclick="openModal('privacyModal')">Privacy Policy</button>
+    </nav>
+
+    <footer>
+        &copy; 2026 loading... All rights reserved.
+    </footer>
+
+    <!-- Shop Modal -->
+    <div id="shopModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('shopModal')">&times;</button>
+            <h2 class="modal-title">Shop Collection</h2>
+            <div class="modal-body">
+                <p style="margin-bottom: 0.5rem;">Drop 01 - Coming Soon</p>
+                <div class="product-list">
+                    <div class="product-item">
+                        <span>"loading..." Oversized Hoodie</span>
+                        <span style="color: var(--accent-blue); font-weight: bold;">EGP 1,200</span>
+                    </div>
+                    <div class="product-item">
+                        <span>Minimalist Heavy Tee</span>
+                        <span style="color: var(--accent-blue); font-weight: bold;">EGP 650</span>
+                    </div>
+                    <div class="product-item">
+                        <span>Boxy Sweatpants</span>
+                        <span style="color: var(--accent-blue); font-weight: bold;">EGP 950</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('aboutModal')">&times;</button>
+            <h2 class="modal-title">About loading...</h2>
+            <div class="modal-body">
+                <p>loading... is a minimalist streetwear brand centered around raw simplicity, heavy-weight fabrics, and modern typography.</p>
+                <br>
+                <p>Designed for those who appreciate clean lines, modern aesthetics, and constant progression.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Chart Modal -->
+    <div id="sizeModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('sizeModal')">&times;</button>
+            <h2 class="modal-title">Size Chart</h2>
+            <div class="modal-body">
+                <p>All items feature an oversized streetwear fit.</p>
+                <table class="size-table">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Chest (cm)</th>
+                            <th>Length (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>S</td><td>112</td><td>70</td></tr>
+                        <tr><td>M</td><td>118</td><td>73</td></tr>
+                        <tr><td>L</td><td>124</td><td>76</td></tr>
+                        <tr><td>XL</td><td>130</td><td>79</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('privacyModal')">&times;</button>
+            <h2 class="modal-title">Privacy Policy</h2>
+            <div class="modal-body">
+                <p>Your privacy is important to us. We do not collect or share personal information without explicit consent.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
